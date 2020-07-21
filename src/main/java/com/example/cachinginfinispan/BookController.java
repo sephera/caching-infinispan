@@ -13,7 +13,7 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @Cacheable(cacheNames = "books", key = "#id")
+
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBookName(@PathVariable Integer id) {
         return ResponseEntity.ok(bookService.byId(id));
